@@ -1,0 +1,6 @@
+# data/data.yaml
+train: data/train/images
+val: data/val/images
+
+nc: 3  # Número de clases
+names: ['1-grado', '2-grado', '3-grado']
