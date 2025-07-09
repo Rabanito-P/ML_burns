@@ -1,0 +1,3 @@
+Tipo: <class 'scipy.sparse._csr.csr_matrix'>
+Forma: (9835, 37)
+Densidad: 0.2703

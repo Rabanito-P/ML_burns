@@ -1,0 +1,19 @@
+2025-07-08 18:39:09,262 - root - INFO - Iniciando ML_burns-feature-employ
+2025-07-08 18:39:09,262 - root - INFO - Verificando estructura del CSV...
+2025-07-08 18:39:09,262 - root - ERROR - Error durante la ejecución: name 'logger' is not defined
+Traceback (most recent call last):
+  File "C:\Users\angel\Downloads\ML_burns-feature-employ\main.py", line 34, in verify_csv_structure
+    logger.info(f"Verificando estructura del archivo: {file_path}")
+    ^^^^^^
+NameError: name 'logger' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\angel\Downloads\ML_burns-feature-employ\main.py", line 154, in main
+    df_preview = verify_csv_structure(RAW_DATA)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\angel\Downloads\ML_burns-feature-employ\main.py", line 56, in verify_csv_structure
+    logger.error(f"Error al verificar CSV: {str(e)}")
+    ^^^^^^
+NameError: name 'logger' is not defined

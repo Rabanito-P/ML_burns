@@ -1,0 +1,174 @@
+2025-07-08 18:45:53,987 - root - INFO - Iniciando ML_burns-feature-employ
+2025-07-08 18:45:53,991 - root - INFO - Verificando estructura del CSV...
+2025-07-08 18:45:53,991 - root - INFO - Verificando estructura del archivo: data/employ25_3-4-5.csv
+2025-07-08 18:45:54,004 - root - INFO - Dimensiones: (5, 129)
+2025-07-08 18:45:54,004 - root - INFO - Columnas (primeras 10): ['ANIO', 'MES', 'CONGLOMERADO', 'MUESTRA', 'SELVIV', 'HOGAR', 'REGION', 'LLAVE_PANEL', 'ESTRATO', 'C201']...
+2025-07-08 18:45:54,004 - root - INFO - [ENCONTRADA] Columna 'C208'
+2025-07-08 18:45:54,005 - root - INFO - [ENCONTRADA] Columna 'C303'
+2025-07-08 18:45:54,029 - root - INFO - [ENCONTRADA] Columna 'C207'
+2025-07-08 18:45:54,029 - root - INFO - [ENCONTRADA] Columna 'ingtrabw'
+2025-07-08 18:45:54,031 - root - INFO - [NO ENCONTRADA] Columna 'INGTRABW'
+2025-07-08 18:45:54,031 - root - INFO - Columnas de ingresos encontradas: ['INGTOT', 'INGTOTP', 'ingtrabw']
+2025-07-08 18:45:54,034 - root - INFO - Paso 1: Preprocesando datos...
+2025-07-08 18:45:54,034 - src.preprocess - INFO - Cargando datos desde data/employ25_3-4-5.csv
+2025-07-08 18:45:54,745 - src.preprocess - INFO - Datos cargados correctamente: 9835 filas, 129 columnas
+2025-07-08 18:45:54,745 - src.pipeline - INFO - Construyendo pipeline de preprocesamiento
+2025-07-08 18:45:54,745 - root - INFO - Aplicando pipeline de preprocesamiento...
+2025-07-08 18:45:54,756 - src.pipeline - INFO - Encontrada columna de ingresos: INGTRABW
+2025-07-08 18:45:54,756 - src.pipeline - INFO - Columnas numéricas reales: ['C208', 'INGTRABW']
+2025-07-08 18:45:54,756 - src.pipeline - INFO - Columnas binarias reales: ['C303', 'C207']
+2025-07-08 18:45:54,757 - src.pipeline - INFO - Columnas categóricas reales: ['C310', 'C312', 'C317', 'C333', 'C330', 'C338', 'C335']
+2025-07-08 18:45:54,762 - src.preprocess - INFO - Eliminando 6 columnas: ['C342', 'C334', 'C313', 'REGION', 'ESTRATO', 'C205']
+2025-07-08 18:45:54,791 - src.preprocess - INFO - Valores de imputación calculados para 8 variables
+2025-07-08 18:45:54,816 - src.preprocess - INFO - Creando variable TIENE_DISCAPACIDAD con 6 columnas
+2025-07-08 18:45:54,833 - src.preprocess - INFO - Aplicando transformación logarítmica a INGTRABW
+2025-07-08 18:45:54,842 - src.preprocess - INFO - Valores de imputación calculados para 1 variables
+2025-07-08 18:45:54,956 - src.preprocess - INFO - Matriz dispersa guardada en data\processed.npz
+2025-07-08 18:45:54,957 - src.preprocess - INFO - Metadatos guardados en data\processed_meta.txt
+2025-07-08 18:45:54,957 - root - INFO - Datos procesados guardados en data\processed.csv
+2025-07-08 18:45:54,957 - root - INFO - Paso 2: Buscando número óptimo de clusters...
+2025-07-08 18:45:54,957 - src.evaluate - INFO - Evaluando número óptimo de clusters (2-10)
+2025-07-08 18:45:54,959 - src.preprocess - INFO - Cargando datos desde data/employ25_3-4-5.csv
+2025-07-08 18:45:55,697 - src.preprocess - INFO - Datos cargados correctamente: 9835 filas, 129 columnas
+2025-07-08 18:45:55,698 - src.pipeline - INFO - Construyendo pipeline de preprocesamiento
+2025-07-08 18:45:55,703 - src.pipeline - INFO - Encontrada columna de ingresos: INGTRABW
+2025-07-08 18:45:55,704 - src.pipeline - INFO - Columnas numéricas reales: ['C208', 'INGTRABW']
+2025-07-08 18:45:55,704 - src.pipeline - INFO - Columnas binarias reales: ['C303', 'C207']
+2025-07-08 18:45:55,705 - src.pipeline - INFO - Columnas categóricas reales: ['C310', 'C312', 'C317', 'C333', 'C330', 'C338', 'C335']
+2025-07-08 18:45:55,710 - src.preprocess - INFO - Eliminando 6 columnas: ['C342', 'C334', 'C313', 'REGION', 'ESTRATO', 'C205']
+2025-07-08 18:45:55,739 - src.preprocess - INFO - Valores de imputación calculados para 8 variables
+2025-07-08 18:45:55,762 - src.preprocess - INFO - Creando variable TIENE_DISCAPACIDAD con 6 columnas
+2025-07-08 18:45:55,782 - src.preprocess - INFO - Aplicando transformación logarítmica a INGTRABW
+2025-07-08 18:45:55,793 - src.preprocess - INFO - Valores de imputación calculados para 1 variables
+2025-07-08 18:45:55,842 - src.evaluate - INFO - Evaluando k=2
+2025-07-08 18:45:59,369 - src.evaluate - INFO - Evaluando k=3
+2025-07-08 18:46:02,401 - src.evaluate - INFO - Evaluando k=4
+2025-07-08 18:46:05,322 - src.evaluate - INFO - Evaluando k=5
+2025-07-08 18:46:08,274 - src.evaluate - INFO - Evaluando k=6
+2025-07-08 18:46:11,184 - src.evaluate - INFO - Evaluando k=7
+2025-07-08 18:46:14,199 - src.evaluate - INFO - Evaluando k=8
+2025-07-08 18:46:17,149 - src.evaluate - INFO - Evaluando k=9
+2025-07-08 18:46:20,114 - src.evaluate - INFO - Evaluando k=10
+2025-07-08 18:46:24,442 - src.evaluate - INFO - Gráfico guardado en reports\elbow_silhouette.png
+2025-07-08 18:46:24,450 - src.evaluate - INFO - K óptimo recomendado: 2 (silueta=0.484)
+2025-07-08 18:46:24,458 - src.evaluate - INFO - Resultados de evaluación guardados en reports\cluster_evaluation.csv
+2025-07-08 18:46:24,463 - root - INFO - Número óptimo de clusters encontrado: k=2
+2025-07-08 18:46:24,463 - root - INFO - Paso 3: Entrenando modelo con k=2...
+2025-07-08 18:46:24,464 - src.model - INFO - Cargando datos para entrenamiento desde data/employ25_3-4-5.csv
+2025-07-08 18:46:24,464 - src.preprocess - INFO - Cargando datos desde data/employ25_3-4-5.csv
+2025-07-08 18:46:25,156 - src.preprocess - INFO - Datos cargados correctamente: 9835 filas, 129 columnas
+2025-07-08 18:46:25,156 - src.model - INFO - Construyendo pipeline con 2 clusters
+2025-07-08 18:46:25,156 - src.pipeline - INFO - Construyendo pipeline completo con 2 clusters
+2025-07-08 18:46:25,157 - src.pipeline - INFO - Construyendo pipeline de preprocesamiento
+2025-07-08 18:46:25,157 - src.model - INFO - Entrenando modelo...
+2025-07-08 18:46:25,163 - src.pipeline - INFO - Encontrada columna de ingresos: INGTRABW
+2025-07-08 18:46:25,163 - src.pipeline - INFO - Columnas numéricas reales: ['C208', 'INGTRABW']
+2025-07-08 18:46:25,163 - src.pipeline - INFO - Columnas binarias reales: ['C303', 'C207']
+2025-07-08 18:46:25,163 - src.pipeline - INFO - Columnas categóricas reales: ['C310', 'C312', 'C317', 'C333', 'C330', 'C338', 'C335']
+2025-07-08 18:46:25,168 - src.preprocess - INFO - Eliminando 6 columnas: ['C342', 'C334', 'C313', 'REGION', 'ESTRATO', 'C205']
+2025-07-08 18:46:25,195 - src.preprocess - INFO - Valores de imputación calculados para 8 variables
+2025-07-08 18:46:25,213 - src.preprocess - INFO - Creando variable TIENE_DISCAPACIDAD con 6 columnas
+2025-07-08 18:46:25,234 - src.preprocess - INFO - Aplicando transformación logarítmica a INGTRABW
+2025-07-08 18:46:25,244 - src.preprocess - INFO - Valores de imputación calculados para 1 variables
+2025-07-08 18:46:25,355 - src.model - INFO - Entrenamiento completado
+2025-07-08 18:46:25,381 - src.model - ERROR - Error al guardar modelo: Can't pickle <class 'src.pipeline.build_processing_pipeline.<locals>.DynamicColumnTransformer'>: it's not found as src.pipeline.build_processing_pipeline.<locals>.DynamicColumnTransformer
+2025-07-08 18:46:25,381 - root - ERROR - Error durante la ejecución: Can't pickle <class 'src.pipeline.build_processing_pipeline.<locals>.DynamicColumnTransformer'>: it's not found as src.pipeline.build_processing_pipeline.<locals>.DynamicColumnTransformer
+Traceback (most recent call last):
+  File "C:\Users\angel\Downloads\ML_burns-feature-employ\main.py", line 206, in main
+    model = train_and_save_model(RAW_DATA, MODEL_PATH, n_clusters=optimal_k)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\angel\Downloads\ML_burns-feature-employ\src\model.py", line 66, in train_and_save_model
+    joblib.dump(pipeline, model_path)
+  File "C:\Users\angel\AppData\Local\Programs\Python\Python312\Lib\site-packages\joblib\numpy_pickle.py", line 553, in dump
+    NumpyPickler(f, protocol=protocol).dump(value)
+  File "C:\Users\angel\AppData\Local\Programs\Python\Python312\Lib\pickle.py", line 484, in dump
+    self.save(obj)
+  File "C:\Users\angel\AppData\Local\Programs\Python\Python312\Lib\site-packages\joblib\numpy_pickle.py", line 355, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\angel\AppData\Local\Programs\Python\Python312\Lib\pickle.py", line 600, in save
+    self.save_reduce(obj=obj, *rv)
+  File "C:\Users\angel\AppData\Local\Programs\Python\Python312\Lib\pickle.py", line 714, in save_reduce
+    save(state)
+  File "C:\Users\angel\AppData\Local\Programs\Python\Python312\Lib\site-packages\joblib\numpy_pickle.py", line 355, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\angel\AppData\Local\Programs\Python\Python312\Lib\pickle.py", line 557, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "C:\Users\angel\AppData\Local\Programs\Python\Python312\Lib\pickle.py", line 989, in save_dict
+    self._batch_setitems(obj.items())
+  File "C:\Users\angel\AppData\Local\Programs\Python\Python312\Lib\pickle.py", line 1013, in _batch_setitems
+    save(v)
+  File "C:\Users\angel\AppData\Local\Programs\Python\Python312\Lib\site-packages\joblib\numpy_pickle.py", line 355, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\angel\AppData\Local\Programs\Python\Python312\Lib\pickle.py", line 557, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "C:\Users\angel\AppData\Local\Programs\Python\Python312\Lib\pickle.py", line 949, in save_list
+    self._batch_appends(obj)
+  File "C:\Users\angel\AppData\Local\Programs\Python\Python312\Lib\pickle.py", line 973, in _batch_appends
+    save(x)
+  File "C:\Users\angel\AppData\Local\Programs\Python\Python312\Lib\site-packages\joblib\numpy_pickle.py", line 355, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\angel\AppData\Local\Programs\Python\Python312\Lib\pickle.py", line 557, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "C:\Users\angel\AppData\Local\Programs\Python\Python312\Lib\pickle.py", line 904, in save_tuple
+    save(element)
+  File "C:\Users\angel\AppData\Local\Programs\Python\Python312\Lib\site-packages\joblib\numpy_pickle.py", line 355, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\angel\AppData\Local\Programs\Python\Python312\Lib\pickle.py", line 600, in save
+    self.save_reduce(obj=obj, *rv)
+  File "C:\Users\angel\AppData\Local\Programs\Python\Python312\Lib\pickle.py", line 714, in save_reduce
+    save(state)
+  File "C:\Users\angel\AppData\Local\Programs\Python\Python312\Lib\site-packages\joblib\numpy_pickle.py", line 355, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\angel\AppData\Local\Programs\Python\Python312\Lib\pickle.py", line 557, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "C:\Users\angel\AppData\Local\Programs\Python\Python312\Lib\pickle.py", line 989, in save_dict
+    self._batch_setitems(obj.items())
+  File "C:\Users\angel\AppData\Local\Programs\Python\Python312\Lib\pickle.py", line 1013, in _batch_setitems
+    save(v)
+  File "C:\Users\angel\AppData\Local\Programs\Python\Python312\Lib\site-packages\joblib\numpy_pickle.py", line 355, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\angel\AppData\Local\Programs\Python\Python312\Lib\pickle.py", line 557, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "C:\Users\angel\AppData\Local\Programs\Python\Python312\Lib\pickle.py", line 949, in save_list
+    self._batch_appends(obj)
+  File "C:\Users\angel\AppData\Local\Programs\Python\Python312\Lib\pickle.py", line 973, in _batch_appends
+    save(x)
+  File "C:\Users\angel\AppData\Local\Programs\Python\Python312\Lib\site-packages\joblib\numpy_pickle.py", line 355, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\angel\AppData\Local\Programs\Python\Python312\Lib\pickle.py", line 557, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "C:\Users\angel\AppData\Local\Programs\Python\Python312\Lib\pickle.py", line 904, in save_tuple
+    save(element)
+  File "C:\Users\angel\AppData\Local\Programs\Python\Python312\Lib\site-packages\joblib\numpy_pickle.py", line 355, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\angel\AppData\Local\Programs\Python\Python312\Lib\pickle.py", line 600, in save
+    self.save_reduce(obj=obj, *rv)
+  File "C:\Users\angel\AppData\Local\Programs\Python\Python312\Lib\pickle.py", line 684, in save_reduce
+    save(cls)
+  File "C:\Users\angel\AppData\Local\Programs\Python\Python312\Lib\site-packages\joblib\numpy_pickle.py", line 355, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\angel\AppData\Local\Programs\Python\Python312\Lib\pickle.py", line 557, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "C:\Users\angel\AppData\Local\Programs\Python\Python312\Lib\pickle.py", line 1171, in save_type
+    return self.save_global(obj)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\angel\AppData\Local\Programs\Python\Python312\Lib\pickle.py", line 1086, in save_global
+    raise PicklingError(
+_pickle.PicklingError: Can't pickle <class 'src.pipeline.build_processing_pipeline.<locals>.DynamicColumnTransformer'>: it's not found as src.pipeline.build_processing_pipeline.<locals>.DynamicColumnTransformer

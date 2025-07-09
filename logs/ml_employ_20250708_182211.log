@@ -1,0 +1,12 @@
+2025-07-08 18:22:11,289 - root - INFO - Iniciando ML_burns-feature-employ
+2025-07-08 18:22:11,295 - src.preprocess - INFO - Cargando datos desde data/employ25_3-4-5.csv
+2025-07-08 18:22:11,999 - src.preprocess - INFO - Datos cargados correctamente: 9835 filas, 129 columnas
+2025-07-08 18:22:11,999 - root - ERROR - Error durante la ejecución: cannot access local variable 'BaseEstimator' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\angel\Downloads\ML_burns-feature-employ\main.py", line 124, in main
+    processing_pipe = build_processing_pipeline()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\angel\Downloads\ML_burns-feature-employ\src\pipeline.py", line 65, in build_processing_pipeline
+    class ColumnValidator(BaseEstimator, TransformerMixin):
+                          ^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'BaseEstimator' where it is not associated with a value

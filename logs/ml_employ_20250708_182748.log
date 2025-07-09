@@ -1,0 +1,25 @@
+2025-07-08 18:27:48,730 - root - INFO - Iniciando ML_burns-feature-employ
+2025-07-08 18:27:48,748 - root - INFO - Paso 1: Preprocesando datos...
+2025-07-08 18:27:48,748 - src.preprocess - INFO - Cargando datos desde data/employ25_3-4-5.csv
+2025-07-08 18:27:49,446 - src.preprocess - INFO - Datos cargados correctamente: 9835 filas, 129 columnas
+2025-07-08 18:27:49,446 - src.pipeline - INFO - Construyendo pipeline de preprocesamiento
+2025-07-08 18:27:49,446 - root - ERROR - Error durante la ejecución: All intermediate steps should be transformers and implement fit and transform or be the string 'passthrough' 'ConditionalEmploymentImputer(employment_vars=['C310', 'C312', 'C317', 'C333',
+                                              'C330', 'C338', 'INGTRABW',
+                                              'C335'])' (type <class 'src.preprocess.ConditionalEmploymentImputer'>) doesn't
+Traceback (most recent call last):
+  File "C:\Users\angel\Downloads\ML_burns-feature-employ\main.py", line 126, in main
+    processed_data = processing_pipe.fit_transform(df)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\angel\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\base.py", line 1473, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\angel\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\pipeline.py", line 533, in fit_transform
+    Xt = self._fit(X, y, routed_params)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\angel\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\pipeline.py", line 386, in _fit
+    self._validate_steps()
+  File "C:\Users\angel\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\pipeline.py", line 256, in _validate_steps
+    raise TypeError(
+TypeError: All intermediate steps should be transformers and implement fit and transform or be the string 'passthrough' 'ConditionalEmploymentImputer(employment_vars=['C310', 'C312', 'C317', 'C333',
+                                              'C330', 'C338', 'INGTRABW',
+                                              'C335'])' (type <class 'src.preprocess.ConditionalEmploymentImputer'>) doesn't

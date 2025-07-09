@@ -1,0 +1,92 @@
+2025-07-08 18:56:01,191 - root - INFO - Iniciando ML_burns-feature-employ
+2025-07-08 18:56:01,194 - root - INFO - Verificando estructura del CSV...
+2025-07-08 18:56:01,194 - root - INFO - Verificando estructura del archivo: data/employ25_3-4-5.csv
+2025-07-08 18:56:01,194 - root - INFO - Dimensiones: (5, 129)
+2025-07-08 18:56:01,194 - root - INFO - Columnas (primeras 10): ['ANIO', 'MES', 'CONGLOMERADO', 'MUESTRA', 'SELVIV', 'HOGAR', 'REGION', 'LLAVE_PANEL', 'ESTRATO', 'C201']...
+2025-07-08 18:56:01,194 - root - INFO - [ENCONTRADA] Columna 'C208'
+2025-07-08 18:56:01,194 - root - INFO - [ENCONTRADA] Columna 'C303'
+2025-07-08 18:56:01,241 - root - INFO - [ENCONTRADA] Columna 'C207'
+2025-07-08 18:56:01,241 - root - INFO - [ENCONTRADA] Columna 'ingtrabw'
+2025-07-08 18:56:01,242 - root - INFO - [NO ENCONTRADA] Columna 'INGTRABW'
+2025-07-08 18:56:01,243 - root - INFO - Columnas de ingresos encontradas: ['INGTOT', 'INGTOTP', 'ingtrabw']
+2025-07-08 18:56:01,244 - root - INFO - Paso 1: Preprocesando datos...
+2025-07-08 18:56:01,245 - src.preprocess - INFO - Cargando datos desde data/employ25_3-4-5.csv
+2025-07-08 18:56:01,896 - src.preprocess - INFO - Datos cargados correctamente: 9835 filas, 129 columnas
+2025-07-08 18:56:01,896 - src.pipeline - INFO - Construyendo pipeline de preprocesamiento
+2025-07-08 18:56:01,896 - root - INFO - Aplicando pipeline de preprocesamiento...
+2025-07-08 18:56:01,896 - src.pipeline - INFO - Encontrada columna de ingresos: INGTRABW
+2025-07-08 18:56:01,896 - src.pipeline - INFO - Columnas numéricas reales: ['C208', 'INGTRABW']
+2025-07-08 18:56:01,896 - src.pipeline - INFO - Columnas binarias reales: ['C303', 'C207']
+2025-07-08 18:56:01,896 - src.pipeline - INFO - Columnas categóricas reales: ['C310', 'C312', 'C317', 'C333', 'C330', 'C338', 'C335']
+2025-07-08 18:56:01,914 - src.preprocess - INFO - Eliminando 6 columnas: ['C342', 'C334', 'C313', 'REGION', 'ESTRATO', 'C205']
+2025-07-08 18:56:01,933 - src.preprocess - INFO - Valores de imputación calculados para 8 variables
+2025-07-08 18:56:01,968 - src.preprocess - INFO - Creando variable TIENE_DISCAPACIDAD con 6 columnas
+2025-07-08 18:56:01,981 - src.preprocess - INFO - Aplicando transformación logarítmica a INGTRABW
+2025-07-08 18:56:01,986 - src.preprocess - INFO - Valores de imputación calculados para 1 variables
+2025-07-08 18:56:02,045 - src.preprocess - INFO - Matriz dispersa guardada en data\processed.npz
+2025-07-08 18:56:02,045 - src.preprocess - INFO - Metadatos guardados en data\processed_meta.txt
+2025-07-08 18:56:02,045 - root - INFO - Datos procesados guardados en data\processed.csv
+2025-07-08 18:56:02,045 - root - INFO - Paso 2: Buscando número óptimo de clusters...
+2025-07-08 18:56:02,061 - src.evaluate - INFO - Evaluando número óptimo de clusters (2-10)
+2025-07-08 18:56:02,061 - src.preprocess - INFO - Cargando datos desde data/employ25_3-4-5.csv
+2025-07-08 18:56:02,727 - src.preprocess - INFO - Datos cargados correctamente: 9835 filas, 129 columnas
+2025-07-08 18:56:02,727 - src.pipeline - INFO - Construyendo pipeline de preprocesamiento
+2025-07-08 18:56:02,727 - src.pipeline - INFO - Encontrada columna de ingresos: INGTRABW
+2025-07-08 18:56:02,727 - src.pipeline - INFO - Columnas numéricas reales: ['C208', 'INGTRABW']
+2025-07-08 18:56:02,727 - src.pipeline - INFO - Columnas binarias reales: ['C303', 'C207']
+2025-07-08 18:56:02,727 - src.pipeline - INFO - Columnas categóricas reales: ['C310', 'C312', 'C317', 'C333', 'C330', 'C338', 'C335']
+2025-07-08 18:56:02,740 - src.preprocess - INFO - Eliminando 6 columnas: ['C342', 'C334', 'C313', 'REGION', 'ESTRATO', 'C205']
+2025-07-08 18:56:02,763 - src.preprocess - INFO - Valores de imputación calculados para 8 variables
+2025-07-08 18:56:02,785 - src.preprocess - INFO - Creando variable TIENE_DISCAPACIDAD con 6 columnas
+2025-07-08 18:56:02,804 - src.preprocess - INFO - Aplicando transformación logarítmica a INGTRABW
+2025-07-08 18:56:02,815 - src.preprocess - INFO - Valores de imputación calculados para 1 variables
+2025-07-08 18:56:02,863 - src.evaluate - INFO - Evaluando k=2
+2025-07-08 18:56:05,927 - src.evaluate - INFO - Evaluando k=3
+2025-07-08 18:56:08,482 - src.evaluate - INFO - Evaluando k=4
+2025-07-08 18:56:10,958 - src.evaluate - INFO - Evaluando k=5
+2025-07-08 18:56:13,430 - src.evaluate - INFO - Evaluando k=6
+2025-07-08 18:56:15,918 - src.evaluate - INFO - Evaluando k=7
+2025-07-08 18:56:18,430 - src.evaluate - INFO - Evaluando k=8
+2025-07-08 18:56:20,954 - src.evaluate - INFO - Evaluando k=9
+2025-07-08 18:56:23,473 - src.evaluate - INFO - Evaluando k=10
+2025-07-08 18:56:26,404 - src.evaluate - INFO - Gráfico guardado en reports\elbow_silhouette.png
+2025-07-08 18:56:26,430 - src.evaluate - INFO - K óptimo recomendado: 2 (silueta=0.484)
+2025-07-08 18:56:26,436 - src.evaluate - INFO - Resultados de evaluación guardados en reports\cluster_evaluation.csv
+2025-07-08 18:56:26,440 - root - INFO - Número óptimo de clusters encontrado: k=2
+2025-07-08 18:56:26,440 - root - INFO - Paso 3: Entrenando modelo con k=2...
+2025-07-08 18:56:26,441 - src.model - INFO - Cargando datos para entrenamiento desde data/employ25_3-4-5.csv
+2025-07-08 18:56:26,441 - src.preprocess - INFO - Cargando datos desde data/employ25_3-4-5.csv
+2025-07-08 18:56:27,044 - src.preprocess - INFO - Datos cargados correctamente: 9835 filas, 129 columnas
+2025-07-08 18:56:27,044 - src.model - INFO - Construyendo pipeline con 2 clusters
+2025-07-08 18:56:27,044 - src.pipeline - INFO - Construyendo pipeline completo con 2 clusters
+2025-07-08 18:56:27,044 - src.pipeline - INFO - Construyendo pipeline de preprocesamiento
+2025-07-08 18:56:27,044 - src.model - INFO - Entrenando modelo...
+2025-07-08 18:56:27,060 - src.pipeline - INFO - Encontrada columna de ingresos: INGTRABW
+2025-07-08 18:56:27,060 - src.pipeline - INFO - Columnas numéricas reales: ['C208', 'INGTRABW']
+2025-07-08 18:56:27,060 - src.pipeline - INFO - Columnas binarias reales: ['C303', 'C207']
+2025-07-08 18:56:27,060 - src.pipeline - INFO - Columnas categóricas reales: ['C310', 'C312', 'C317', 'C333', 'C330', 'C338', 'C335']
+2025-07-08 18:56:27,067 - src.preprocess - INFO - Eliminando 6 columnas: ['C342', 'C334', 'C313', 'REGION', 'ESTRATO', 'C205']
+2025-07-08 18:56:27,083 - src.preprocess - INFO - Valores de imputación calculados para 8 variables
+2025-07-08 18:56:27,118 - src.preprocess - INFO - Creando variable TIENE_DISCAPACIDAD con 6 columnas
+2025-07-08 18:56:27,130 - src.preprocess - INFO - Aplicando transformación logarítmica a INGTRABW
+2025-07-08 18:56:27,138 - src.preprocess - INFO - Valores de imputación calculados para 1 variables
+2025-07-08 18:56:27,242 - src.model - INFO - Entrenamiento completado
+2025-07-08 18:56:27,246 - src.model - INFO - Modelo guardado exitosamente en models/kmeans_model.pkl
+2025-07-08 18:56:27,248 - root - INFO - Modelo entrenado y guardado en models/kmeans_model.pkl
+2025-07-08 18:56:27,248 - root - INFO - Paso 4: Generando reporte de clusters...
+2025-07-08 18:56:27,248 - src.evaluate - WARNING - Longitud de feature_names (5) no coincide con dimensión de cluster_centers (37)
+2025-07-08 18:56:27,252 - src.evaluate - INFO - Reporte guardado en reports/clusters_summary.md
+2025-07-08 18:56:27,253 - root - INFO - Reporte de clusters generado en reports/clusters_summary.md
+2025-07-08 18:56:27,253 - root - INFO - Paso 5: Realizando predicciones de ejemplo...
+2025-07-08 18:56:27,253 - src.predict - INFO - Cargando datos y modelo para predicción
+2025-07-08 18:56:27,254 - src.preprocess - INFO - Cargando datos desde data/employ25_3-4-5.csv
+2025-07-08 18:56:27,875 - src.preprocess - INFO - Datos cargados correctamente: 9835 filas, 129 columnas
+2025-07-08 18:56:27,875 - src.model - INFO - Cargando modelo desde models/kmeans_model.pkl
+2025-07-08 18:56:27,894 - src.predict - INFO - Aplicando modelo para asignar clusters
+2025-07-08 18:56:27,900 - src.pipeline - INFO - Encontrada columna de ingresos: INGTRABW
+2025-07-08 18:56:27,900 - src.pipeline - INFO - Columnas numéricas reales: ['C208', 'INGTRABW']
+2025-07-08 18:56:27,900 - src.pipeline - INFO - Columnas binarias reales: ['C303', 'C207']
+2025-07-08 18:56:27,900 - src.pipeline - INFO - Columnas categóricas reales: ['C310', 'C312', 'C317', 'C333', 'C330', 'C338', 'C335']
+2025-07-08 18:56:27,904 - src.preprocess - INFO - Eliminando 6 columnas: ['C342', 'C334', 'C313', 'REGION', 'ESTRATO', 'C205']
+2025-07-08 18:56:27,938 - src.preprocess - INFO - Creando variable TIENE_DISCAPACIDAD con 6 columnas
+2025-07-08 18:56:27,951 - src.preprocess - INFO - Aplicando transformación logarítmica a INGTRABW

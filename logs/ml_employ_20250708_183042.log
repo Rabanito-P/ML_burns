@@ -1,0 +1,61 @@
+2025-07-08 18:30:42,530 - root - INFO - Iniciando ML_burns-feature-employ
+2025-07-08 18:30:42,533 - root - INFO - Paso 1: Preprocesando datos...
+2025-07-08 18:30:42,533 - src.preprocess - INFO - Cargando datos desde data/employ25_3-4-5.csv
+2025-07-08 18:30:43,207 - src.preprocess - INFO - Datos cargados correctamente: 9835 filas, 129 columnas
+2025-07-08 18:30:43,221 - src.pipeline - INFO - Construyendo pipeline de preprocesamiento
+2025-07-08 18:30:43,226 - src.pipeline - INFO - Encontrada columna de ingresos: INGTRABW
+2025-07-08 18:30:43,226 - src.pipeline - INFO - Columnas numéricas validadas: ['C208', 'INGTRABW']
+2025-07-08 18:30:43,227 - src.pipeline - INFO - Columnas binarias validadas: ['C303', 'C207']
+2025-07-08 18:30:43,227 - src.pipeline - INFO - Columnas categóricas validadas: ['C310', 'C312', 'C317', 'C333', 'C330', 'C338', 'C335']
+2025-07-08 18:30:43,232 - src.preprocess - INFO - Eliminando 6 columnas: ['C342', 'C334', 'C313', 'REGION', 'ESTRATO', 'C205']
+2025-07-08 18:30:43,263 - src.preprocess - INFO - Valores de imputación calculados para 8 variables
+2025-07-08 18:30:43,284 - src.preprocess - INFO - Creando variable TIENE_DISCAPACIDAD
+2025-07-08 18:30:43,308 - src.preprocess - INFO - Aplicando transformación logarítmica a INGTRABW
+2025-07-08 18:30:43,328 - src.preprocess - INFO - Valores de imputación calculados para 1 variables
+2025-07-08 18:30:43,336 - root - ERROR - Error durante la ejecución: A given column is not a column of the dataframe
+Traceback (most recent call last):
+  File "C:\Users\angel\AppData\Local\Programs\Python\Python312\Lib\site-packages\pandas\core\indexes\base.py", line 3805, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'INGTRABW'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\angel\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\_indexing.py", line 361, in _get_column_indices
+    col_idx = all_columns.get_loc(col)
+              ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\angel\AppData\Local\Programs\Python\Python312\Lib\site-packages\pandas\core\indexes\base.py", line 3812, in get_loc
+    raise KeyError(key) from err
+KeyError: 'INGTRABW'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\angel\Downloads\ML_burns-feature-employ\main.py", line 126, in main
+    processed_data = processing_pipe.fit_transform(df)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\angel\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\base.py", line 1473, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\angel\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\pipeline.py", line 541, in fit_transform
+    return last_step.fit_transform(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\angel\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\_set_output.py", line 316, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\angel\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\base.py", line 1473, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\angel\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\compose\_column_transformer.py", line 968, in fit_transform
+    self._validate_column_callables(X)
+  File "C:\Users\angel\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\compose\_column_transformer.py", line 536, in _validate_column_callables
+    transformer_to_input_indices[name] = _get_column_indices(X, columns)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\angel\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\_indexing.py", line 369, in _get_column_indices
+    raise ValueError("A given column is not a column of the dataframe") from e
+ValueError: A given column is not a column of the dataframe

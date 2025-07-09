@@ -1,0 +1,29 @@
+2025-07-08 18:41:40,052 - root - INFO - Iniciando ML_burns-feature-employ
+2025-07-08 18:41:40,057 - root - INFO - Verificando estructura del CSV...
+2025-07-08 18:41:40,057 - root - INFO - Verificando estructura del archivo: data/employ25_3-4-5.csv
+2025-07-08 18:41:40,089 - root - INFO - Dimensiones: (5, 129)
+2025-07-08 18:41:40,089 - root - INFO - Columnas (primeras 10): ['ANIO', 'MES', 'CONGLOMERADO', 'MUESTRA', 'SELVIV', 'HOGAR', 'REGION', 'LLAVE_PANEL', 'ESTRATO', 'C201']...
+2025-07-08 18:41:40,100 - root - INFO - Columnas de ingresos encontradas: ['INGTOT', 'INGTOTP', 'ingtrabw']
+2025-07-08 18:41:40,100 - root - INFO - Paso 1: Preprocesando datos...
+2025-07-08 18:41:40,100 - src.preprocess - INFO - Cargando datos desde data/employ25_3-4-5.csv
+2025-07-08 18:41:40,774 - src.preprocess - INFO - Datos cargados correctamente: 9835 filas, 129 columnas
+2025-07-08 18:41:40,774 - src.pipeline - INFO - Construyendo pipeline de preprocesamiento
+2025-07-08 18:41:40,775 - root - INFO - Aplicando pipeline de preprocesamiento...
+2025-07-08 18:41:40,782 - src.pipeline - INFO - Encontrada columna de ingresos: INGTRABW
+2025-07-08 18:41:40,782 - src.pipeline - INFO - Columnas numéricas reales: ['C208', 'INGTRABW']
+2025-07-08 18:41:40,782 - src.pipeline - INFO - Columnas binarias reales: ['C303', 'C207']
+2025-07-08 18:41:40,782 - src.pipeline - INFO - Columnas categóricas reales: ['C310', 'C312', 'C317', 'C333', 'C330', 'C338', 'C335']
+2025-07-08 18:41:40,788 - src.preprocess - INFO - Eliminando 6 columnas: ['C342', 'C334', 'C313', 'REGION', 'ESTRATO', 'C205']
+2025-07-08 18:41:40,818 - src.preprocess - INFO - Valores de imputación calculados para 8 variables
+2025-07-08 18:41:40,846 - src.preprocess - INFO - Creando variable TIENE_DISCAPACIDAD con 6 columnas
+2025-07-08 18:41:40,864 - src.preprocess - INFO - Aplicando transformación logarítmica a INGTRABW
+2025-07-08 18:41:40,873 - src.preprocess - INFO - Valores de imputación calculados para 1 variables
+2025-07-08 18:41:40,925 - src.preprocess - ERROR - Error al guardar datos procesados: 'csr_matrix' object has no attribute 'to_csv'
+2025-07-08 18:41:40,925 - root - ERROR - Error durante la ejecución: 'csr_matrix' object has no attribute 'to_csv'
+Traceback (most recent call last):
+  File "C:\Users\angel\Downloads\ML_burns-feature-employ\main.py", line 182, in main
+    save_processed_data(processed_data, PROCESSED_DATA)
+  File "C:\Users\angel\Downloads\ML_burns-feature-employ\src\preprocess.py", line 309, in save_processed_data
+    df.to_csv(output_path, index=False)
+    ^^^^^^^^^
+AttributeError: 'csr_matrix' object has no attribute 'to_csv'. Did you mean: 'tocsc'?
